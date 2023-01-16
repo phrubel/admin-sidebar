@@ -54,12 +54,19 @@ const Home = () => {
               className="flex gap-3 items-center text-sm font-medium p-2 hover:bg-gray-400 rounded-md transition duration-200 "
             >
               <div>{React.createElement(menu?.icon, { size: '20px' })}</div>
-              <h2>{menu?.name}</h2>
+              <h2
+                style={{ transitionDelay: `${i + 3}00ms` }}
+                className={`whitespace-pre duration-500 ${
+                  !open && 'opacity-0 translate-x-28 overflow-hidden'
+                }`}
+              >
+                {menu?.name}
+              </h2>
             </Link>
           ))}
         </div>
       </div>
-      <div className="text-2xl w-full font-semibold">Admin Navbar!!</div>
+      <div className="text-xl font-semibold">Admin Navbar!!</div>
     </section>
   );
 };
