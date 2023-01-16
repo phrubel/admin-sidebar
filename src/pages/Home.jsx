@@ -51,7 +51,7 @@ const Home = () => {
             <Link
               to={menu?.link}
               key={i}
-              className="flex gap-3 items-center text-sm font-medium p-2 hover:bg-gray-400 rounded-md transition duration-200 "
+              className="flex gap-3 items-center text-sm font-medium p-2 hover:bg-gray-400 rounded-md transition duration-200 group "
             >
               <div>{React.createElement(menu?.icon, { size: '20px' })}</div>
               <h2
@@ -59,6 +59,13 @@ const Home = () => {
                 className={`whitespace-pre duration-500 ${
                   !open && 'opacity-0 translate-x-28 overflow-hidden'
                 }`}
+              >
+                {menu?.name}
+              </h2>
+              <h2
+                className={`${
+                  open && 'hidden'
+                } absolute left-48 bg-black font-semibold whitespace-pre text-white rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
               >
                 {menu?.name}
               </h2>
